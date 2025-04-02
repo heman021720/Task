@@ -1,0 +1,63 @@
+  TASK 1: IAM Setup
+
+ Step 1: Create an IAM Role and Attach it to EC2
+- Create an IAM role for EC2 with read, write, and execute permissions.
+- Attach necessary policies for EC2, S3, and Systems Manager.
+- Name the role appropriately.
+
+ Step 2: Create an IAM User
+- Create a new IAM user.
+- Provide programmatic access.
+- Attach relevant policies.
+- Save credentials securely.
+---
+  
+   TASK 2: Launch EC2 and Attach EBS Volume
+
+  Step 1: Launch an EC2 Instance
+- Choose an appropriate AMI and instance type.
+- Assign the IAM role created in Task 1.
+- Configure security group with SSH, HTTP, and HTTPS access.
+  
+  Step 2: Attach a 12GB EBS Volume
+- Create an EBS volume with 12 GiB size.
+- Attach it to the EC2 instance.
+- Ensure proper formatting and mounting.
+---
+    
+    TASK 3: Configure and Deploy a Web Server on EC2
+  
+  Step 1: Install Web Server
+- Connect to the EC2 instance via SSH.
+- Install Apache (httpd) or NGINX.
+- Start and enable the web server service.
+  
+   Step 2: Deploy a Sample Web Page
+- Create an index.html file under the web server's root directory.
+- Ensure proper file permissions.
+   
+    Step 3: Configure Firewall and Security Groups
+- Update Security Group to allow HTTP (80) and HTTPS (443).
+- Modify firewall settings if necessary.
+    
+    Step 4: Test Web Server
+- Access the instance's public IP in a browser.
+- Verify that the sample web page loads successfully.
+     
+     Step 5: Enable Auto Start for Web Server
+- Ensure the web server starts automatically on reboot.
+- Verify the status of the service after rebooting the instance.
+     
+     Step 6: Set Up Logging and Monitoring
+- Enable access and error logging for Apache or NGINX.
+- Configure CloudWatch Logs to monitor web server activity.
+    
+      Step 7: Implement Basic Security Hardening
+- Disable root login and password authentication for SSH.
+- Restrict access using firewall rules.
+- Regularly update the server to patch vulnerabilities.
+    
+     Step 8: Create a Backup Strategy
+- Take a snapshot of the EBS volume.
+- Set up an automated backup policy using AWS Backup.
+
